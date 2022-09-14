@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    padding: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.intro {
+    background-color: rgb(19, 18, 18);
+    color: white;
+    margin: -16px;
+    padding: 16px;
+    text-align: center;
+
+}
+
+#profile-image {
+    width: 300px;
+    border-radius: 50rem;
+}
+
+.socials img {
+    width:25px;
+   
+}
+
+.socials a {
+    margin: auto 16px;
+    text-decoration: none;
+   
+}
+
+.container > div > h2 {
+    text-align: center;
+}
+
+p {
+    line-height: 1.7rem;
+    /* font-size: 1.2rem; */
+}
+
+
+table,tr,td,th {
+    border: 1px solid black;
+    border-collapse: collapse;
+   
+}
+table{
+    margin: auto;
+    width: 90%;
+    text-align: center;
+}
+
+td,th {
+    padding: 8px;
+}
+
