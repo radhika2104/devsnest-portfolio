@@ -15,7 +15,7 @@ function printRole(role) {
         console.log(role[letterIndex]);
         letterIndex++; 
         // call the function again to print next letter
-        setTimeout(printRole(role), printingSpeed);
+        setTimeout(printRole, printingSpeed,role);;
     } else {
         clearRole(role);
     }
@@ -44,7 +44,7 @@ function clearRole(role) {
         roleSpan.textContent = updatedRole;
         console.log(updatedRole);
         letterIndex--;
-        setTimeout(clearRole(role),clearingSpeed);
+        setTimeout(clearRole,clearingSpeed,role);
     }
 }
 
@@ -87,3 +87,8 @@ printRole(roles[roleIndex])
 // }
 // is this function not runing because 3 loops runTime?
 // runRoles()
+
+// ways to callback function
+// setTimeout(printRole, printingSpeed,role);
+// setTimeout(()=>{printRole(role)}, printingSpeed);
+// setTimeout(function(){printRole(role)}, printingSpeed);
