@@ -115,7 +115,24 @@
                     </ul>
             </ul> -->
         </div>
-        
+        <div id="contact">
+            <form action="post" name="contact-form" id="contact-form" data-netlify="true">
+                <h2>Contact Me</h2>
+                <div>
+                    <label for="firstname">First Name</label>
+                    <input id="firstname" name="firstname" required type="text">
+                </div>
+                <div>
+                    <label for="lastname">Last Name</label>
+                    <input id="lastname" name="lastname" required type="text">
+                </div>
+                <div>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" type="text" cols="30" rows="10"></textarea>
+                </div>
+                <button type="submit">Send</button>
+            </form>
+        </div>
     </div>
     <script src="app.js" type="text/javascript"></script>
 </body>
