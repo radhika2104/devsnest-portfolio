@@ -1,13 +1,36 @@
 * {
     box-sizing: border-box;
 }
+
 body {
     margin: 0;
-    padding: 16px;
+    padding: 0px;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.intro {
+header {
+    border-bottom: 4px solid;
+    padding: 26px;
+    margin: 0;
+    position: sticky;
+    top: 0;
+    background-color: hsl(199deg 100% 48% / 42%);
+    text-align: center;
+}
+
+
+
+header nav  > a {
+    text-decoration: none;
+    padding: 8px;
+    margin: 16px;
+}
+
+header nav  > a:hover {
+    text-decoration: underline;
+}
+
+#intro {
     background-color: rgb(19, 18, 18);
     color: white;
     margin: -16px;
@@ -31,8 +54,11 @@ body {
     text-decoration: none;
    
 }
+.container {
+    padding: 16px;
+}
 
-.container > div > h2 {
+.container > section > h2 {
     text-align: center;
 }
 
@@ -88,5 +114,11 @@ td,th {
     display: block;
     margin-bottom: 1rem;
     width: 100%;
+}
+
+footer {
+    border-top: 4px solid;
+    padding: 16px;
+    text-align: center;
 }
 
