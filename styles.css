@@ -1,3 +1,8 @@
+:root{
+    --bg-color: white;
+    --text-color: black;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -147,6 +152,10 @@ footer {
     
 }
 
+section {
+    padding-top: 2rem;
+}
+
 @media (width > 1000px){
 
     footer {
@@ -248,4 +257,30 @@ footer {
     to {
         transform: translate(75%,0%);
     }
+}
+
+@media(prefers-color-scheme:dark){
+    :root {
+        --bgColor: rgb(19, 18, 18);
+        --text-color: white;
+        --secondary-bgColor: rgb(130, 169, 185);
+    }
+    body {
+        background-color: var(--bgColor);
+        color: var(--text-color);
+    }
+
+    *{
+        border: var(--text-color);
+    }
+
+    table,tr,td,th {
+        border: 1px solid rgb(58, 130, 166);
+        border-collapse: collapse;
+       
+    }
+    #intro {
+        background-color: var(--secondary-bgColor);
+    }
+
 }
