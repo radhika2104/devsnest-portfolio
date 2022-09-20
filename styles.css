@@ -135,13 +135,10 @@ td,th {
 footer {
     border-top: 4px solid;
     padding: 8px;
-    text-align: left;
-    
+    text-align: center;
 }
 
-footer > p{
-    animation: moveLeftToRight 16s 0.1s cubic-bezier(0.21, 0.16, 0.45, 0.6) infinite alternate;
-}
+
 
 .mobile-nav,
 .menu {
@@ -150,6 +147,15 @@ footer > p{
     
 }
 
+@media (width > 1000px){
+
+    footer {
+        text-align: left;
+    }
+    footer > p{
+        animation: moveLeftToRight 16s 0.1s cubic-bezier(0.21, 0.16, 0.45, 0.6) infinite alternate;
+    }
+}
 
 
 
