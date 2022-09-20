@@ -1,6 +1,9 @@
 * {
     box-sizing: border-box;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
@@ -14,21 +17,28 @@ header {
     margin: 0;
     position: sticky;
     top: 0;
-    background-color: hsl(199deg 100% 48% / 42%);
+    background-color: rgba(125, 208, 247, 0.92);
     text-align: center;
 }
 
-
-
 header nav  > a {
     text-decoration: none;
-    padding: 8px;
-    margin: 16px;
+    color: black;
+    margin-right: 16px;
+}
+
+header nav  > a:last-child {
+    margin-right: revert;
 }
 
 header nav  > a:hover {
     text-decoration: underline;
 }
+
+header nav  > a:visited {
+    text-decoration: royalblue;
+}
+
 
 #intro {
     background-color: rgb(19, 18, 18);
@@ -122,3 +132,93 @@ footer {
     text-align: center;
 }
 
+.mobile-nav,
+.menu {
+    display: none;
+    display: none;
+    
+}
+
+
+
+
+@media(width < 500px) {
+    .default-nav{
+        display: none;
+    }
+
+    .mobile-nav,
+    section.menu{
+        display: revert;
+    }
+
+    /* to show but still hide - make height 100% on click of menu in js */
+    section.menu{
+        height: 0;
+        width: 100%;
+        z-index: 2;
+        overflow: hidden;
+        background-color: rgb(226, 234, 238);
+        position: fixed; top: 0;
+    }
+
+    #close-menu {
+        border: none;
+        background: transparent;
+        font-size: 200%;
+        position: absolute; right: 16px; top: 16px;
+    }
+
+    section.menu nav {
+        margin-top: 48px;
+    }
+
+    section.menu ul{
+        list-style: none;
+    }
+
+    section.menu ul > li {
+        margin-bottom: 24px;
+        font-size: 140%;
+    }
+
+    section.menu ul li a{
+        text-decoration: none;
+        color: black;
+    }
+    section.menu ul li > a:hover {
+        text-decoration: underline;
+    }
+
+    section.menu ul li > a:visited {
+        color: royalblue;
+    }
+
+
+
+    .mobile-nav button{
+        display: block;
+        padding: 8px;
+        border-radius: 0.5rem;
+        background-color: transparent;
+        margin-left: auto;
+    }
+
+   
+
+    table {
+        font-size: 70%;
+    }
+
+    td,th {
+        padding: 2px;
+    }
+}
+
+@media (width < 350px) {
+
+    #profile-image {
+        width: 100%;
+    }
+
+}
