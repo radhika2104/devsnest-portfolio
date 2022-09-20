@@ -56,7 +56,13 @@ header nav  > a:visited {
 
 .socials img {
     width:25px;
+    transition: transform 0.3s ease-in-out;
+    
    
+}
+
+.socials img:hover {
+    transform: scale(1.3,1.3);
 }
 
 .socials a {
@@ -128,8 +134,13 @@ td,th {
 
 footer {
     border-top: 4px solid;
-    padding: 16px;
-    text-align: center;
+    padding: 8px;
+    text-align: left;
+    
+}
+
+footer > p{
+    animation: moveLeftToRight 16s 0.1s cubic-bezier(0.21, 0.16, 0.45, 0.6) infinite alternate;
 }
 
 .mobile-nav,
@@ -160,6 +171,7 @@ footer {
         overflow: hidden;
         background-color: rgb(226, 234, 238);
         position: fixed; top: 0;
+        transition: height 0.5s cubic-bezier(0, 0.41, 0.91, 0.5);
     }
 
     #close-menu {
@@ -221,4 +233,13 @@ footer {
         width: 100%;
     }
 
+}
+
+@keyframes moveLeftToRight {
+    from {
+        transform: translate(5%,0%);
+    }
+    to {
+        transform: translate(75%,0%);
+    }
 }
