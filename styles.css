@@ -3,6 +3,9 @@
     --text-color: black;
     --secondary-bgColor:rgb(198, 226, 237);
     --header-color: rgba(125, 208, 247, 0.92);
+    --profile-image-shadow-color: #ffffff;
+    --spacing-regular: 16px;
+    --spacing-small:8px;
 }
 
 * {
@@ -32,7 +35,7 @@ header {
 header nav  > a {
     text-decoration: none;
     color: black;
-    margin-right: 16px;
+    margin-right: var(--spacing-regular);
 }
 
 header nav  > a:last-child {
@@ -51,8 +54,8 @@ header nav  > a:visited {
 #intro {
     background-color: var(--secondary-bgColor);
     color: var(--text-color);
-    margin: -16px;
-    padding: 16px;
+    margin: calc(-1* var(--spacing-regular));
+    padding: var(--spacing-regular);
     text-align: center;
 
 }
@@ -65,6 +68,7 @@ header nav  > a:visited {
 #profile-image {
     width: 300px;
     border-radius: 50rem;
+    box-shadow: 0px 0px 13px 8px var(--profile-image-shadow-color);
 }
 
 .socials img {
@@ -79,12 +83,12 @@ header nav  > a:visited {
 }
 
 .socials a {
-    margin: auto 16px;
+    margin: auto var(--spacing-regular);
     text-decoration: none;
    
 }
 .container {
-    padding: 16px;
+    padding: var(--spacing-regular);
 }
 
 .container > section > h2 {
@@ -109,7 +113,7 @@ table{
 }
 
 td,th {
-    padding: 8px;
+    padding: var(--spacing-small);
 }
 
 #contact {
@@ -148,14 +152,14 @@ td,th {
 
 #contact button{
     font-size: inherit;
-    padding: 8px;
+    padding: var(--spacing-small);
     border-radius: 0.5rem;
     background-color: var(--secondary-bgColor);
 }
 
 footer {
     border-top: 4px solid;
-    padding: 8px;
+    padding: var(--spacing-small);
     text-align: center;
 }
 
@@ -170,12 +174,13 @@ footer {
 
 .container section {
     padding-top: 2rem;
+    scroll-margin-top: 50px;
 }
 
 .container_grid{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 16px;
+    gap: 24px;
     justify-content: center;
 }
 
@@ -186,19 +191,36 @@ footer {
 
 .card {
     border: 1px solid var(--secondary-bgColor);
-    padding: 8px;
+    padding: 4px;
     box-shadow: 4px 4px 9px 3px var(--secondary-bgColor);
-    text-align: center;
-    
+    /* display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-items: center; */
+    display: grid;
+    justify-items: center;
+    border-radius: 1rem;
+    transition: transform 0.4s ease-in, box-shadow 0.4s ease-in-out;
+}
+
+.card:hover{
+    box-shadow: 4px 4px 13px 7px rgb(88 138 158);
+    transform: translateY(calc(-1* var(--spacing-small)));
 }
 
 .card header{
     font-weight: 600;
     font-size: x-large;
+    width: 100%;
+
 }
 
 .card header {
     background-color: var(--secondary-bgColor);
+}
+
+.card header, .card:hover {
+    z-index: -1;
 }
 
 @media (width > 1000px){
@@ -238,7 +260,7 @@ footer {
         border: none;
         background: transparent;
         font-size: 200%;
-        position: absolute; right: 16px; top: 16px;
+        position: absolute; right: var(--spacing-regular); top: var(--spacing-regular);
     }
 
     section.menu nav {
@@ -270,7 +292,7 @@ footer {
 
     .mobile-nav button{
         display: block;
-        padding: 8px;
+        padding: var(--spacing-small);
         border-radius: 0.5rem;
         background-color: transparent;
         margin-left: auto;
@@ -310,7 +332,8 @@ footer {
         --bgColor: rgb(19, 18, 18);
         --text-color: white;
         --secondary-bgColor: rgb(130, 169, 185);
-        --dark-menu-bg: rgb(201, 210, 214);;
+        --dark-menu-bg: rgb(201, 210, 214);
+        --profile-image-shadow-color:#a4cfe8;
     }
     body {
         background-color: var(--bgColor);
@@ -332,9 +355,8 @@ footer {
 
     .card {
         border: 1px solid var(--header-color);
-        padding: 8px;
         box-shadow: 4px 4px 9px 3px var(--header-color);
-        text-align: center;
+        
         
     }
 
@@ -352,5 +374,13 @@ footer {
     .mobile-nav button{
         border: 1px solid black;
 
+    }
+    #profile-image {
+        box-shadow: 0px 0px 13px 8px var(--profile-image-shadow-color);
+    }
+
+    .card:hover{
+        box-shadow: 4px 4px 13px 7px rgb(69, 193, 250);
+        
     }
 }
