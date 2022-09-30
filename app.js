@@ -12,7 +12,7 @@ function printRole(role) {
         // add char and recursively call until we reach end of string length
         // roleSpan.textContent += role.charAt(letterIndex);
         roleSpan.textContent += role[letterIndex];
-        console.log(role[letterIndex]);
+        // console.log(role[letterIndex]);
         letterIndex++; 
         // call the function again to print next letter
         setTimeout(printRole, printingSpeed,role);;
@@ -42,7 +42,7 @@ function clearRole(role) {
             updatedRole += role.charAt(i);
         };
         roleSpan.textContent = updatedRole;
-        console.log(updatedRole);
+        // console.log(updatedRole);
         letterIndex--;
         setTimeout(clearRole,clearingSpeed,role);
     }
@@ -51,44 +51,12 @@ function clearRole(role) {
 printRole(roles[roleIndex])
 
 
-// function typeRole(role) {
-//     let index = 0;
-//     while (index < role.length) {
-//         roleSpan.textContent += role.charAt(index);
-//         setTimeout(function() {
-//             console.log('typing each char: ',role.charAt(index));
-//             index++;
-//         }, 150);
-// };
-// };
-
-// function clearRole(role) {
-//     let index = role.length;
-//     while (index >= 0) {
-//         roleSpan.textContent = role.slice(0,index);
-//         setTimeout(function() {
-//         console.log('removing each char: ',role.slice(0,index));
-//         index--;
-//         }, 75);
-// };
-// };
-
-// function runRoles() {
-//     // run infinitely
-// while (true){
-//     // for each role, type a role and clear a role
-//     for (let role of roles) {
-//         roleSpan.textContent = role;
-//         console.log(role);
-//         // typeRole(role);
-//         // clearRole(role);
-//     }
-// }
-// }
-// is this function not runing because 3 loops runTime?
-// runRoles()
-
-// ways to callback function
-// setTimeout(printRole, printingSpeed,role);
-// setTimeout(()=>{printRole(role)}, printingSpeed);
-// setTimeout(function(){printRole(role)}, printingSpeed);
+// header position static till 'about me' section , sticky after that
+window.addEventListener("scroll",function(){
+    let intro = this.document.getElementById("intro");
+    if (this.window.scrollY >= (intro.offsetHeight + intro.offsetTop)){
+        this.document.querySelector(".header").style.position = "sticky";
+    } else {
+        this.document.querySelector(".header").style.position = "revert";   
+    }
+})
